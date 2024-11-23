@@ -39,13 +39,12 @@ class UserUpdate(OnlyYouMixin, UpdateView):
     template_name = 'account/edit_user.html'
 
     def get_success_url(self):
-        return reverse_lazy('user_detail', kwargs={'pk': self.kwargs['pk']})
+        return reverse_lazy('detail_user', kwargs={'pk': self.kwargs['pk']})
 
 class PasswordChange(PasswordChangeView):
     template_name = 'account/change_password.html'
-
-class PasswordChangeDone(PasswordChangeDoneView):
-    template_name = 'account/password_change_done.html'
+    def get_success_url(self):
+        return reverse_lazy('detail_user', kwargs={'pk': self.request.user.pk})
 
 class UserDelete(OnlyYouMixin, DeleteView):
     model = User

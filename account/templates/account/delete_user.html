@@ -6,6 +6,6 @@
 <form method="POST">
     {% csrf_token %}
     <button type="submit" class="btn btn-danger">Eliminar Cuenta</button>
-    <a href="{% url 'detail_user' %}" class="btn btn-secondary">Cancelar</a>
+    <a href="{% url 'detail_user' pk=request.user.pk %}" class="btn btn-secondary">Cancelar</a>
 </form>
 {% endblock %}

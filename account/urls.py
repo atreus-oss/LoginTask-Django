@@ -12,13 +12,11 @@ urlpatterns = [
     
     path('logout/', LogoutView.as_view(), name='logout'),
     
-    path('user_detail/<int:pk>/', views.UserDetail.as_view(), name='user_detail'),
+    path('detail_user/<int:pk>/', views.UserDetail.as_view(), name='detail_user'),
     
-    path('user_update/<int:pk>/', views.UserUpdate.as_view(), name='user_update'),
+    path('user_update/<int:pk>/', views.UserUpdate.as_view(), name='edit_user'),
     
-    path('password_change/', views.PasswordChange.as_view(), name='password_change'),
+    path('change_password/', views.PasswordChange.as_view(), name='change_password'),
     
-    path('password_change/done/', views.PasswordChangeDone.as_view(), name='password_change_done'),
-    
-    path('user_delete/<int:pk>/', views.UserDelete.as_view(), name='user_delete'),
+    path('delete_user/<int:pk>/', views.UserDelete.as_view(), name='delete_user'),
 ]
